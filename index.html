@@ -1,0 +1,33 @@
+<div id="file-drop" style="border:1px dashed black; height:300px; width:300px;">Drop files here!</div>
+<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+<script>
+  var file_drop = document.getElementById('file-drop');
+  file_drop.addEventListener(
+    'dragover',
+    function handleDragOver(evt) {
+      evt.stopPropagation()
+      evt.preventDefault()
+      evt.dataTransfer.dropEffect = 'copy'
+    },
+    false
+  )
+  file_drop.addEventListener(
+    'drop',
+    function(evt) {
+      evt.stopPropagation()
+      evt.preventDefault()
+      var files = evt.dataTransfer.files  // FileList object.
+      var file = files[0]                 // File     object.
+
+      /*
+        CODE Takes in a file as input and seeds
+      */
+      var client = new WebTorrent()
+      client.seed(files, function (torrent) {
+          alert('file:///Users/adityabhatnagar/Documents/w2w/recieve.html?hash=' + torrent.infoHash)
+        })
+
+    },
+    false
+  )
+</script>

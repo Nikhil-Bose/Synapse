@@ -25,11 +25,12 @@
   margin: auto;
   margin-top: 50px;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
-  padding-top: 50px;
+  padding-top: 110px;
+    border-radius: 25px;
   background-color:rgba(0, 0, 0, 0.2);
-  ">Drop files here!</div>
+  ">Drop your HTML file here to get an <i>instant</i> shareable  link!</div>
   </div>
 
   <canvas></canvas>
@@ -152,7 +153,10 @@ loop();
         */
         var client = new WebTorrent()
         client.seed(files, function (torrent) {
+          document.getElementById("file-drop").innerHTML = "It's live! \n https://nikhil-bose.github.io/Synapse/recieve.html?hash=" + torrent.infoHash;
+          /*
           alert('https://nikhil-bose.github.io/Synapse/recieve.html?hash=' + torrent.infoHash)
+          */
         })
       },
       false

@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Synapse</title>
-  <!--
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  -->
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" src="scripts.js"></script>
-</head>
-
-
-<body>
-
-
-  <div id="title_band">
-    <div id="title">Synapse</div>
-     <div id="file-drop" style=" border:3px solid black;
-  height:300px; 
-  width: 50%;
-  margin: auto;
-  margin-top: 50px;
-  text-align: center;
-  font-size: 20px;
-  padding-top: 30px;
-  ">Drop files here!</div>
-  </div>
-
-  <canvas></canvas>
-
- 
-  <script>
-    var canvas = document.querySelector("canvas");
+var canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
@@ -125,40 +89,3 @@ function draw() {
 
 // Start
 loop();
-  </script>
-  <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
-  <script>
-    var file_drop = document.getElementById('file-drop');
-    file_drop.addEventListener(
-      'dragover',
-      function handleDragOver(evt) {
-        evt.stopPropagation()
-        evt.preventDefault()
-        evt.dataTransfer.dropEffect = 'copy'
-      },
-      false
-      )
-    file_drop.addEventListener(
-      'drop',
-      function(evt) {
-        evt.stopPropagation()
-        evt.preventDefault()
-      var files = evt.dataTransfer.files  // FileList object.
-      var file = files[0]                 // File     object.
-      /*
-        CODE Takes in a file as input and seeds
-        */
-        var client = new WebTorrent()
-        client.seed(files, function (torrent) {
-          alert('https://nikhil-bose.github.io/Synapse/recieve.html?hash=' + torrent.infoHash)
-        })
-      },
-      false
-      )
-    </script>
-
-  </body>
-  </html>
-
-
-

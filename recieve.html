@@ -38,8 +38,7 @@
 			.then(function(torrentHash) {
 
         var myParam = location.search.split('hash=')[1]
-
-				console.log('using hash', 'e91afce9b5556b59e13059c3140a28dcd61d933f')
+				
 				var magnet = CONFIG.magnetBase + myParam
 				var client = new WebTorrent()
 				client.add(magnet, function(torrent) {

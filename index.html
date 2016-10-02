@@ -23,7 +23,7 @@
         CODE Takes in a file as input and seeds
       */
       var client = new WebTorrent()
-      client.seed(files, function (torrent) {
+      client.seed(file, function (torrent) {
           alert('https://nikhil-bose.github.io/Synapse/recieve.html?hash=' + torrent.infoHash)
         })
 

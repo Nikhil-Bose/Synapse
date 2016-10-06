@@ -1,4 +1,10 @@
-# SDHacks2016
+# Synapse
 
 # README 
-# Synapse is a Web2Web website creating tool, useful for creating instant, lightweight and safe websites. It's Web2Web torrent-based architecture removes the need of having a full time network domain and server architecture. All you have to do drag an HTML file, in and a shareable URL will popup instantly.
+
+#What is it?#
+Synapse is a Web2Web website creating tool, useful for creating instant, lightweight and safe websites. It's a peer-to-peer website sharing tool.
+
+#How does it work?#
+Uses Web-torrents API to seed your files and renders the content using the specific torrent hash code. 
+

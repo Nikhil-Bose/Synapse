@@ -8,3 +8,4 @@ Synapse is a Web2Web website creating tool, useful for creating instant, lightwe
 #How does it work?#
 Uses Web-torrents API to seed your files and renders the content using the specific torrent hash code. 
 
+Hosted on synps.xyz
